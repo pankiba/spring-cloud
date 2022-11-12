@@ -1,0 +1,44 @@
+### spring application properties
+
+spring:
+  application:
+    name: zuul-api-gateway
+    
+### 
+
+server:
+  port: 8765
+    
+### Eureka server registration
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    preferIpAddress: true
+
+### zuul routes & properties
+
+zuul:
+  host:
+    connect-timeout-millis: 10000 
+
+### actuator properties
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+### logging properties
+
+logging:
+  level:
+    org.springframework.cloud: DEBUG
+  file:
+    name: zuul-api-gateway.log
+  pattern:
+    console: "%d{yyyy-MM-dd} %d{HH:mm:ss.SSS} | %blue(%thread) | %5p | %logger | %m%n"
+    file: "%d{yyyy-MM-dd} %d{HH:mm:ss.SSS} | %thread | %5p | %logger | %m%n"

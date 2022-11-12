@@ -1,0 +1,43 @@
+### spring application properties
+
+spring:
+  application:
+    name: employee-service
+
+### application specific properties
+welcome:
+  message: Welcome to Employee Service !!
+
+### server properties
+
+server:
+  port: 8000
+  servlet:
+    context-path: /employee-service
+    
+### Eureka server registration
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    preferIpAddress: true
+
+### actuator properties
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+### logging properties
+
+logging:
+  level:
+    org.springframework: INFO
+  file: employee-service.log
+  pattern:
+    console: "%d{yyyy-MM-dd} %d{HH:mm:ss.SSS} | %blue(%thread) | %5p | %logger | %m%n"
+    file: "%d{yyyy-MM-dd} %d{HH:mm:ss.SSS} | %thread | %5p | %logger | %m%n"

@@ -1,0 +1,5 @@
+### application specific properties
+welcome:
+  message: Welcome to Employee Service - Dev Environment !!
+
+

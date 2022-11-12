@@ -1,0 +1,36 @@
+
+### spring application properties
+
+spring:
+  application:
+    name: feign-client
+
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+    
+### actuator properties
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+### logging properties
+
+logging:
+  level:
+    org.springframework: INFO
+    com.pankiba.feignclient: DEBUG
+    org.springframework.cloud.openfeign: DEBUG
+  file:
+    name: feign-client.log
+  pattern:
+    console: "%d{yyyy-MM-dd} %d{HH:mm:ss.SSS} | %blue(%thread) | %5p | %logger | %m%n"
+    file: "%d{yyyy-MM-dd} %d{HH:mm:ss.SSS} | %thread | %5p | %logger | %m%n"

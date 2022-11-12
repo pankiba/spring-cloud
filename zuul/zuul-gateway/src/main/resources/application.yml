@@ -1,0 +1,38 @@
+### spring application properties
+
+spring:
+  application:
+    name: zuul-gateway
+
+### zuul routes
+
+zuul:
+  routes:
+    posts:
+      path: /posts/**
+      url: https://jsonplaceholder.typicode.com/posts
+    photos:
+      path: /photos/**
+      url: https://jsonplaceholder.typicode.com/photos
+  host:
+    connect-timeout-millis: 5000
+
+### actuator properties
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+### logging properties
+
+logging:
+  level:
+    org.springframework.cloud: DEBUG
+  file:
+    name: zuul-gateway.log
+  pattern:
+    console: "%d{yyyy-MM-dd} %d{HH:mm:ss.SSS} | %blue(%thread) | %5p | %logger | %m%n"
+    file: "%d{yyyy-MM-dd} %d{HH:mm:ss.SSS} | %thread | %5p | %logger | %m%n"
+
