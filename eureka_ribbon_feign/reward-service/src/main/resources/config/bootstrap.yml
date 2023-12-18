@@ -1,0 +1,5 @@
+### spring application properties
+
+spring:
+  application:
+    name: reward-service
